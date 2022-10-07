@@ -1,104 +1,86 @@
-import {
-  AppBar,
-  Avatar,
-  Badge,
-  Box,
-  InputBase,
-  Menu,
-  MenuItem,
-  styled,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import React, { useState } from "react";
-import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
-import { Mail, Notifications } from "@mui/icons-material";
+import { AppBar, Avatar, Badge, Box, InputBase, Menu, MenuItem, styled, Toolbar, Typography } from '@mui/material'
+import { React, useState } from 'react';
+import { BakeryDining, Mail, Notifications } from '@mui/icons-material';
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between",
 });
 
-const Search = styled("div")(({ theme }) => ({
+const SearchBar = styled("div")(({theme}) => ({
   backgroundColor: "white",
   padding: "0 10px",
   borderRadius: theme.shape.borderRadius,
   width: "40%",
 }));
 
-const Icons = styled(Box)(({ theme }) => ({
+const Icons = styled(Box)(({theme}) => ({
   display: "none",
+  gap: "20px",
   alignItems: "center",
-  gap: 20,
-  [theme.breakpoints.up("sm")]: {
-    display: "flex",
-  },
+  [theme.breakpoints.up("sm")]:{
+    display: "flex"
+  }
 }));
 
-const UserBox = styled(Box)(({ theme }) => ({
+const UserBox = styled(Box)(({theme}) => ({
   display: "flex",
+  gap: "10px",
   alignItems: "center",
-  gap: 10,
-  [theme.breakpoints.up("sm")]: {
-    display: "none",
-  },
+  [theme.breakpoints.up("sm")]:{
+    display: "none"
+  }
 }));
 
 const Navbar = () => {
-
-  const [open, setOpen] = useState(false);
-
+  const [open, setOpen] = useState(false)
   return (
-    <AppBar position="sticky" sx={{bgcolor:"skyblue", p:1}}>
+    <AppBar position="sticky">
       <StyledToolbar>
-        <Typography variant="h5" fontWeight={700} sx={{ display: { xs: "none", sm: "block" }, color:"white" }}>
-          Project One
+        <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
+          Navbar
         </Typography>
-        <BusinessCenterIcon sx={{ display: { xs: "block", sm: "none" } }} />
-        <Search>
-          <InputBase placeholder="Search" />
-        </Search>
+        <BakeryDining sx={{ display: { xs: "block", sm: "none" } }}/>
+        <SearchBar><InputBase placeholder='Search...'/></SearchBar>
         <Icons>
-          <Badge badgeContent={4} color="error">
-            <Mail />
+          <Badge badgeContent={4} color='error'>
+            <Mail/>
           </Badge>
-          <Badge badgeContent={4} color="error">
-            <Notifications />
+          <Badge badgeContent={2} color='error'>
+            <Notifications/>
           </Badge>
           <Avatar
-            sx={{ width: 30, height: 30 }}
-            src="https://cdn.shopify.com/s/files/1/0271/1181/7300/files/01.jpg"
-            onClick={e=>setOpen(true)}
-          />
+            sx={{width:30, height:30}}
+            src='https://c.tenor.com/OLtFOaBgVSYAAAAC/ping-aaaaaaa.gif'
+            onClick={(e) => setOpen(true)} />
         </Icons>
         <UserBox onClick={e=>setOpen(true)}>
           <Avatar
-            sx={{ width: 30, height: 30 }}
-            src="https://cdn.shopify.com/s/files/1/0271/1181/7300/files/01.jpg"
-          />
-          <Typography variant="span">John Doe</Typography>
+            sx={{width:30, height:30}}
+            src='https://c.tenor.com/OLtFOaBgVSYAAAAC/ping-aaaaaaa.gif' />
+          <Typography variant='span'>John</Typography>
         </UserBox>
       </StyledToolbar>
       <Menu
         id="demo-positioned-menu"
         aria-labelledby="demo-positioned-button"
         open={open}
-        onClose={e=>setOpen(false)}
+        onClose={(e) => setOpen(false)}
         anchorOrigin={{
-          vertical: "top",
-          horizontal: "right",
+          vertical: 'top',
+          horizontal: 'right',
         }}
         transformOrigin={{
-          vertical: "top",
-          horizontal: "right",
+          vertical: 'top',
+          horizontal: 'left',
         }}
       >
-        <MenuItem >Profile</MenuItem>
-        <MenuItem >My account</MenuItem>
-        <MenuItem >Logout</MenuItem>
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
       </Menu>
     </AppBar>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
