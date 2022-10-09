@@ -1,18 +1,15 @@
-
-import { Box } from "@mui/material";
-import React from "react";
-import Posts from "./Posts";
+import { Box } from '@mui/material'
+import React from 'react'
+import Post from './Post'
 
 const Feed = () => {
-
   return (
-    <Box flex={4} p={2} sx={{bgcolor:"background.paper"}}>
-      <Posts/>
-      <Posts/>
-      <Posts/>
-      <Posts/>
+    <Box flex={4} p={2}>
+      <Post/>
+      <Post/>
+      <Post/>
     </Box>
-  );
-};
+  )
+}
 
-export default Feed;
+export default Feed
