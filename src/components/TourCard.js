@@ -49,10 +49,10 @@ const TourCard = ({ tour }) => {
                         asignItems: "center"
                     }}>
                         <AccessTime sx={{
-                            width: 12.5
+                            width: 10.5
                         }} />
-                        <Typography variant="body2" component="p" marginLeft={0.5}>
-                            {tour.duration}
+                        <Typography variant="body2" component="p" marginLeft={0.5} marginTop={0.5}>
+                            {tour.duration} hours
                         </Typography>
                     </Box>
                     <Box sx={{
@@ -63,20 +63,20 @@ const TourCard = ({ tour }) => {
                     >
                         <Rating
                             name="read-only"
-                            value={4.5}
+                            value={tour.rating}
                             precision={0.1}
                             readOnly
                             size="small"
                         />
-                        <Typography variant="body2" component="p" marginLeft={0.5}>
+                        <Typography variant="body2" component="p" marginLeft={0.5} marginTop={0.3}>
                             {tour.rating}
                         </Typography>
-                        <Typography variant="body2" component="p" marginLeft={1.5}>
+                        <Typography variant="body2" component="p" marginLeft={1.5} marginTop={0.3}>
                             ({tour.numberOfReviews} reviews)
                         </Typography>
                     </Box>
                     <Box>
-                        <Typography variant="h5" component="h3" marginTop={0}>
+                        <Typography variant="h6" component="h3" marginTop={0}>
                             From C ${tour.price}
                         </Typography>
                     </Box>
