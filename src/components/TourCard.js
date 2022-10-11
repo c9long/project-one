@@ -51,7 +51,7 @@ const TourCard = ({ tour }) => {
                         <AccessTime sx={{
                             width: 10.5
                         }} />
-                        <Typography variant="body2" component="p" marginLeft={0.5} marginTop={0.5}>
+                        <Typography variant="body2" component="p" marginLeft={0.5} marginTop={0.6}>
                             {tour.duration} hours
                         </Typography>
                     </Box>
