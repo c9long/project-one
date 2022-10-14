@@ -46,7 +46,7 @@ const TourCard = ({ tour }) => {
                     </Typography>
                     <Box sx={{
                         display: "flex",
-                        asignItems: "center"
+                        alignItems: "center"
                     }}>
                         <AccessTime sx={{
                             width: 10.5
@@ -57,7 +57,7 @@ const TourCard = ({ tour }) => {
                     </Box>
                     <Box sx={{
                         display: "flex",
-                        asignItems: "center"
+                        alignItems: "center"
                     }}
                         marginTop={2}
                     >
